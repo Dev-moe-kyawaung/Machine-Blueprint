@@ -1,0 +1,113 @@
+.blueprint-bg {
+  background-color: var(--bp-bg);
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.blueprint-grid-bright {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.blueprint-border {
+  border: 1px solid var(--bp-grid);
+  box-shadow: var(--glow-sm);
+}
+
+.blueprint-card {
+  background: var(--bp-paper);
+  border: 1px solid var(--bp-paper-border);
+  box-shadow: var(--blueprint);
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprint-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, var(--bp-grid) 49%, var(--bp-grid) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, var(--bp-grid) 49%, var(--bp-grid) 51%, transparent 52%);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.blueprint-line {
+  stroke: var(--bp-line);
+  stroke-width: 1.5;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.blueprint-line-secondary {
+  stroke: var(--bp-line-secondary);
+  stroke-width: 1;
+}
+
+.blueprint-line-dim {
+  stroke: var(--bp-line-dim);
+  stroke-width: 0.5;
+  stroke-dasharray: 4 4;
+}
+
+.blueprint-text {
+  fill: var(--bp-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.blueprint-text-secondary {
+  fill: var(--bp-text-secondary);
+}
+
+.blueprint-accent {
+  stroke: var(--bp-accent);
+  fill: var(--bp-accent);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--bp-line), 0 0 20px var(--bp-line);
+}
+
+.glow-accent {
+  text-shadow: 0 0 10px var(--bp-accent), 0 0 20px var(--bp-accent);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--bp-line), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.gear-container {
+  position: relative;
+  display: inline-block;
+}
+
+.gear::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, var(--bp-line) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(10px);
+}
