@@ -1,0 +1,90 @@
+@import '../styles/variables.css';
+@import '../styles/animations.css';
+@import '../styles/blueprint.css';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bp-bg);
+  color: var(--bp-text);
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bp-bg-secondary);
+  border-left: 1px solid var(--bp-grid);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bp-line);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bp-line-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--bp-line);
+  color: var(--bp-bg);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--bp-line);
+  outline-offset: 2px;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Blueprint grid pattern */
+.blueprint-bg {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glow effects */
+.glow-text {
+  text-shadow: 0 0 10px var(--bp-line), 0 0 20px var(--bp-line);
+}
+
+.glow-accent-text {
+  text-shadow: 0 0 10px var(--bp-accent), 0 0 20px var(--bp-accent);
+}
+
+/* Utility classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
